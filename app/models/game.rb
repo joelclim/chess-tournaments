@@ -1,3 +1,5 @@
+##
+# A game is a record of a chess game, i.e. contains the PGN file
 class Game < ActiveRecord::Base
   belongs_to :division
   has_and_belongs_to_many :players
@@ -6,7 +8,7 @@ class Game < ActiveRecord::Base
 
   validates_presence_of :white_player, :black_player
 
-  has_and_belongs_to_many :matches
+  has_and_belongs_to_many :lineups_line_items
 
   # none and public means all can see this game
   # teams means both teams for which the player is member can see
